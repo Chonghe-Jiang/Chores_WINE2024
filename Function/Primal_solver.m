@@ -23,7 +23,7 @@ function [x, t] = Primal_solver(n, m, B, D, eta)
     opts_sg.max_iter = 1e5; % Maximum number of outer iterations
     opts_sg.mu0 = ones(1, m) / 10;
     mode = 0; % mode = 0, low precision direct; 1 low precision two stage; 2 high precision
-    ratio = 1.3; % Calculated by He
+    ratio = 1.3; 
     [result_SG, t_SG] = SG_mode(mode, n, m, B, D, ratio, opts_sg);
     mu = result_SG.mu;
 
@@ -32,11 +32,6 @@ function [x, t] = Primal_solver(n, m, B, D, eta)
     t_bound = max(mu)-min(b_cons);
     x0 = [mu_comb;ones(n,1)*t_bound];
     
-
-
-
-
-
     %% Ini for measure old
     mu = x0(1:m);
     max_mu = max(mu); % enhance computation stability
@@ -73,15 +68,3 @@ function [x, t] = Primal_solver(n, m, B, D, eta)
     disp(['QP Solver Loop: ', num2str(iter)])
     disp(['QP Solver Time ', num2str(t+t_SG)]);
 end
-% % 获取数据点的索引
-% indices = 1:length(measure_list);
-% % indices = length(measure_list)-9:length(measure_list);
-% % 绘制图表
-% figure;
-% plot(indices, measure_list(indices), 'o-', 'Color', 'b');
-% xlabel('Index');
-% ylabel('Measure');
-% title('Measure List Convergence to 0');
-% grid on;
-% set(gca, 'YScale', 'log');  % 使用对数坐标轴来更好地观察线性收敛
-% disp(['Benchmark Outer Loop: ',num2str(iter)])

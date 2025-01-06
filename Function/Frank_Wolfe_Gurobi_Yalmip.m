@@ -64,19 +64,6 @@ function [result,t_fw] = Frank_Wolfe_Gurobi_Yalmip(n,m,B,D,opts)
     result.time = t_fw;
     result.gap = value_list;
     result.mu = xnew;
-    
-    % % 获取数据点的索引
-    % indices = 1:length(value_list);
-    % % indices = length(measure_list)-9:length(measure_list);
-    % % 绘制图表
-    % figure;
-    % plot(indices, value_list(indices), 'o-', 'Color', 'b');
-    % xlabel('Index');
-    % ylabel('Measure');
-    % title('Measure List Convergence to 0');
-    % grid on;
-    % set(gca, 'YScale', 'log');  % 使用对数坐标轴来更好地观察线性收敛
-
 
     % Display the final result
     disp(['Frank_Wolfe Loop: ',num2str(iter)])

@@ -1,4 +1,3 @@
-
 function xnew = Primal_solver_inner(x, B, D, A, b, eta)
     % Define the problem dimensions
     [n, m] = size(D);
@@ -15,9 +14,9 @@ function xnew = Primal_solver_inner(x, B, D, A, b, eta)
 
     % Set up the solver options for YALMIP to use Gurobi
     options = sdpsettings('solver', 'gurobi', 'verbose', 0, ...
-                      'gurobi.MIPGap', 0.01, ...  % 设置MIPGap为1%
-                      'gurobi.FeasibilityTol', 1e-6, ...  % 设置可行性容差
-                      'gurobi.OptimalityTol', 1e-6);  % 设置最优性容差
+                      'gurobi.MIPGap', 0.01, ...  
+                      'gurobi.FeasibilityTol', 1e-6, ...  
+                      'gurobi.OptimalityTol', 1e-6);  
 
     % Solve the quadratic programming problem
     optimize(constraints, objective, options);

@@ -45,7 +45,7 @@ function mu_new = Dual_solver_Inner_solver(m, n, mu, B, D, stepsize, A_dual_eq, 
     lb_quadprog = zeros(m*n, 1);
 
     % Solve the optimization problem using quadprog
-    options = optimoptions('quadprog', 'Display', 'off');  % 设置不显示输出
+    options = optimoptions('quadprog', 'Display', 'off');  
     [lambda_solver, fval_dual_solver] = quadprog(H_dual, f_quadprog, [], [], Aeq_quadprog, beq_quadprog, lb_quadprog, [], [], options);
 
     %% Map back to the mu_new variable

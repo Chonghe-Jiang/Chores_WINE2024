@@ -29,7 +29,7 @@ function [avg_times, condition_rate_avg, results] = run_experiments_low(n, m, c,
             ratio = 1.3;
             [result_SG, t_SG] = SG_mode(mode, n, m, B, D, ratio, opts);
             t_SG_sum = t_SG_sum + t_SG;
-            results{i, 4} = {result_SG}; % 保存SG结果
+            results{i, 4} = {result_SG};
 
             % DCA-PGD method
             opts_pgd = struct();

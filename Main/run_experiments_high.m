@@ -22,8 +22,7 @@ function [avg_times, avg_condition_rate, results] = run_experiments_high(n, m, c
         end
         fprintf(fid, 'Experiment\tt_md_agd\tt_fw\n');
     end
-    
-    % ten experiments
+
     for i = 1:10
         D = rand(n, m);
         B = rand(1, n);        
@@ -57,7 +56,6 @@ function [avg_times, avg_condition_rate, results] = run_experiments_high(n, m, c
         t_fw_sum = t_fw_sum + t_fw;
         results{i, 2} = {result_fw}; % FW result
         
-        % Save D and B if t_md_agd < t_fw
         if t_md_agd < t_fw
             filename = fullfile(dir_name, sprintf('data_%d.mat', i));
             save(filename, 'D', 'B');
