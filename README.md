@@ -1,4 +1,6 @@
 # Computing Competitive Equilibrium for Chores: Linear Convergence and Lightweight Iteration
-Official implementation of "Computing Competitive Equilibrium for Chores: Linear Convergence and Lightweight Iteration", which is accepted as WINE 2024.
+Official implementation of "Computing Competitive Equilibrium for Chores: Linear Convergence and Lightweight Iteration".
 
-Move to each folder-main to test algorithms on demos and reproduce our results.
+The preliminery version is accepted by WINE 2024. See https://arxiv.org/abs/2410.04036 for the paper.
+
+Move to the folder-main to test algorithms on demos and reproduce our results.
